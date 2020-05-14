@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+
 public class Comunicacion2  extends AppCompatActivity {
     TextView txtmensaje;
     String nombre;
