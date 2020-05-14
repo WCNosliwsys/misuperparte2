@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Comunicacion1  extends AppCompatActivity {
     EditText edtnombre;
@@ -21,6 +22,20 @@ public class Comunicacion1  extends AppCompatActivity {
         Intent intent = new Intent(this, Comunicacion2.class);
         intent.putExtra("nombre", edtnombre.getText().toString());
         intent.putExtra("edad", Integer.parseInt(edtedad.getText().toString()));
-        startActivity(intent);
+        //startActivity(intent);
+        startActivityForResult(intent, 1234);
     }
+    @Override protected void onActivityResult (int requestCode,
+                                               int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1234 && resultCode == RESULT_OK) {
+            String res = data.getExtras().getString("resultado");
+            TextView miresultado = findViewById(R.id.txtvalor);
+            if (res.equals("aceptado"))
+                miresultado.setText("Esperamos que trabajar con nosotros sea de su agrado");
+            else
+                miresultado.setText("Esperemos que cambie de opinion para trabajar con nosotros");
+        }
+    }
+
 }
