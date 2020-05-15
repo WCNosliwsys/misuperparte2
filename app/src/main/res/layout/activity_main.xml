@@ -28,7 +28,7 @@
         app:elevation="4dp"
         app:fabSize="normal"
         app:rippleColor="#43e3ff"
-        android:onClick="mimetodo"/>
+        android:onClick="fabderecha"/>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,5 +41,5 @@
         app:elevation="4dp"
         app:fabSize="normal"
         app:rippleColor="#43e3ff"
-        android:onClick="mimetodo"/>
+        android:onClick="fabizquierda"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
